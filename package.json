@@ -1,0 +1,26 @@
+{
+  "name": "openapi-doc-typescript",
+  "version": "1.0.0",
+  "description": "openapi-generator typescript docs with example file",
+  "main": "./scripts/generateApi.ts",
+  "scripts": {
+    "start": "openapi-generator-cli author template -g typescript-axios",
+    "api": "deno run --allow-all ./scripts/generateApi.deno.ts",
+    "apis": "node ./scripts/generatorJson.js",
+    "postapis": "npm run format-sdk",
+    "format-sdk": "prettier 'src/sdks/**/*.{js,ts, jsx,tsx}' --write ",
+    "help": "openapi-generator-cli --help",
+    "validate": "openapi-generator-cli validate -i ./api-docs.json",
+    "ghelp": "openapi-generator-cli help generate"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "typescript": "^4.7.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
+}
